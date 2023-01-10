@@ -1,0 +1,199 @@
+/* ======================================================================== */ 
+
+ /*                      NOT RELATED TO THE TTUTORIAL                        */
+
+/* ======================================================================== */
+
+*{
+	
+	
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	outline: none;
+	list-style: none;
+
+}
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	outline: none;
+	list-style: none;
+}
+
+:root {
+  --step--2: clamp(0.69rem, calc(0.58rem + 0.60vw), 1.00rem);
+  --step--1: clamp(0.83rem, calc(0.67rem + 0.81vw), 1.25rem);
+  --step-0: clamp(1.00rem, calc(0.78rem + 1.10vw), 1.56rem);
+  --step-1: clamp(1.20rem, calc(0.91rem + 1.47vw), 1.95rem);
+  --step-2: clamp(1.44rem, calc(1.05rem + 1.95vw), 2.44rem);
+  --step-3: clamp(1.73rem, calc(1.21rem + 2.58vw), 3.05rem);
+  --step-4: clamp(2.07rem, calc(1.39rem + 3.40vw), 3.82rem);
+  --step-5: clamp(2.49rem, calc(1.60rem + 4.45vw), 4.77rem);
+	
+	/* Font style */
+	
+	--ff-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	
+	/* Color style */
+	
+	--color-primary: #0575E6;
+	--color-secondary: #6dd5ed;
+	--color-primary-light:#8dc6ff;
+	--color-primary-dark:#021B79;
+	--color-error:#cc3333;
+	--color-success:#4bb544;
+	--color-link:#606470;
+	--color-text:#5f6769;
+	--color-header-dark:#393e46;
+	--color-background:#f5f9ee;
+	--color-border-sc:#ececec;
+	--color-border-focus:#69c2ff;
+	--color-border:#d3d6db;
+	--bs:#ffa857;
+	--color-percentage:#5f6769;
+	--color-header-light:#9ba6a5;
+	--color-border-focus:#a9d7f6;
+	--color-input-background:#f5f9ee;
+	--gradient: linear-gradient(135deg var(--color-primary), var(--color-secondary));
+	
+	
+}
+
+
+/* ======================================================================== */ 
+
+ /*                      RELATED TO THE TTUTORIAL                        */
+
+/* ======================================================================== */
+
+body {
+    background: #eceef1;
+}
+
+.media-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    grid-gap: 1rem;
+    transform: translate(-50%);
+}
+
+:root {
+    --a-height:90px;
+}
+
+.media-wrapper > a {
+    position: relative;
+    width: 90px;
+    height: var(--a-height);
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 2px 18px rgba(0, 0, 0, 0.201);
+}
+
+.media-wrapper > a::before {
+    content: '';
+	position: absolute;
+	left: -110%;
+	top: 90%;
+	width: 120%;
+	height: 120%;
+    transform: rotate(45deg);
+}	
+
+.media-wrapper > a:hover::before {
+    top: -10%;
+    left: -10%;
+    animation: appear .7s 1;
+}
+
+@keyframes appear {
+	0%{
+		left: -110%;
+		top: 90%;
+	}
+	
+	50%{
+		left: 10%;
+		top: -30%;
+	}
+	
+	100%{
+		top: -10%;
+		left: -10%;
+	}
+}
+
+.media-wrapper > a > i{
+    color: #fda403;
+    font-size: var(--step-1);
+    line-height: var(--a-height);
+    transition: .2s ease;
+}
+
+.media-wrapper > a:hover > i{
+    color: #f1f1f1;
+	transform: scale(1.3);
+    
+}
+
+.media-wrapper a.github::before {
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.media-wrapper a.facebook::before {
+    background: #4267B2;
+}
+
+.media-wrapper a.twitter::before {
+    background: #1DA1F2;
+}
+
+.media-wrapper a.google::before {
+    background: #0F9D58;
+}
+
+.media-wrapper a.instagram::before {
+    background-color:#f09433; 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+
+.media-wrapper a.youtube::before {
+    background: #FF0000;
+}
+
+.copy {
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: var(--step-0);
+	font-weight: 200;
+}
+
+.copy p {
+	color: #2a2a2a;
+}
+
+.copy a {
+	color: #6446c7;
+	font-size: var(--step--1);
+	font-weight: 100;
+	letter-spacing: 1px;
+}
