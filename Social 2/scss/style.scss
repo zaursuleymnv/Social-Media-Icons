@@ -1,0 +1,143 @@
+/* ======================================================================== */ 
+
+ /*                      NOT RELATED TO THE TTUTORIAL                        */
+
+/* ======================================================================== */
+
+@import 'partial/variables';
+@import 'partial/mixins';
+
+*{
+	
+	
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	outline: none;
+	list-style: none;
+
+}
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	outline: none;
+	list-style: none;
+}
+
+:root {
+  --step--2: clamp(0.69rem, calc(0.58rem + 0.60vw), 1.00rem);
+  --step--1: clamp(0.83rem, calc(0.67rem + 0.81vw), 1.25rem);
+  --step-0: clamp(1.00rem, calc(0.78rem + 1.10vw), 1.56rem);
+  --step-1: clamp(1.20rem, calc(0.91rem + 1.47vw), 1.95rem);
+  --step-2: clamp(1.44rem, calc(1.05rem + 1.95vw), 2.44rem);
+  --step-3: clamp(1.73rem, calc(1.21rem + 2.58vw), 3.05rem);
+  --step-4: clamp(2.07rem, calc(1.39rem + 3.40vw), 3.82rem);
+  --step-5: clamp(2.49rem, calc(1.60rem + 4.45vw), 4.77rem);
+	
+}
+
+// body {
+//     min-height:  100vh;
+//     text-rendering: optimizeSpeed;
+//     line-height: 1.5;
+//     font-family: var(--ff-primary);
+//   }
+
+// html, body {
+// 	height: 100%;
+// }
+
+
+/* ======================================================================== */ 
+
+ /*                      RELATED TO THE TTUTORIAL                        */
+
+/* ======================================================================== */
+
+
+body {
+    background: $background-color;
+}
+
+.container {
+    width: 90%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem auto;
+
+    ul.social-icons {
+        display: flex;
+        gap: 1rem;
+    
+        li {
+            display: inline;
+            // margin-right: 20px;
+            transition: all .3s ease;
+            &::after {
+                content: '\f105';
+                font-family: "Font Awesome 6 Free";
+                font-size: var(--step-0);
+                font-weight: 900;
+                color: $white;
+                transition: all .3s ease;
+            }
+            &:last-child::after {
+                content: unset;
+            }
+            &:hover {
+                @include transform(translateX(10px));
+            }
+    
+            a {
+                display: inline-block;
+                width: $social-links-width-height-line_height;
+                height: $social-links-width-height-line_height;
+                color: $primary-color;
+                background: $white;
+                border-radius: 50%;
+                transition: all .4s ease;
+                &:hover {
+                    color: $white;
+                    background: $secondary-color;
+                    @include transform(rotate(30deg));
+                }
+    
+                i {
+                    display: block;
+                    font-size: var(--step-2);
+                    text-align: center;
+                    line-height: $social-links-width-height-line_height;
+                }
+            }
+        }
+    
+    }
+}
+
+.copy {
+    position: relative;
+
+    p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-70%, -50%);
+        color: $white;
+        font-size: var(--step-0);
+
+        a {
+            color: rgb(165, 165, 165);
+            font-size: var(--step--1);
+        }
+    }
+}
+

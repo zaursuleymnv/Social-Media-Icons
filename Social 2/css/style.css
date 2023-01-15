@@ -1,0 +1,111 @@
+/* ======================================================================== */
+/*                      NOT RELATED TO THE TTUTORIAL                        */
+/* ======================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  list-style: none;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  list-style: none;
+}
+
+:root {
+  --step--2: clamp(0.69rem, calc(0.58rem + 0.60vw), 1.00rem);
+  --step--1: clamp(0.83rem, calc(0.67rem + 0.81vw), 1.25rem);
+  --step-0: clamp(1.00rem, calc(0.78rem + 1.10vw), 1.56rem);
+  --step-1: clamp(1.20rem, calc(0.91rem + 1.47vw), 1.95rem);
+  --step-2: clamp(1.44rem, calc(1.05rem + 1.95vw), 2.44rem);
+  --step-3: clamp(1.73rem, calc(1.21rem + 2.58vw), 3.05rem);
+  --step-4: clamp(2.07rem, calc(1.39rem + 3.40vw), 3.82rem);
+  --step-5: clamp(2.49rem, calc(1.60rem + 4.45vw), 4.77rem);
+}
+
+/* ======================================================================== */
+/*                      RELATED TO THE TTUTORIAL                        */
+/* ======================================================================== */
+body {
+  background: linear-gradient(to right, #480048, #C04848);
+}
+
+.container {
+  width: 90%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem auto;
+}
+.container ul.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+.container ul.social-icons li {
+  display: inline;
+  transition: all 0.3s ease;
+}
+.container ul.social-icons li::after {
+  content: "\f105";
+  font-family: "Font Awesome 6 Free";
+  font-size: var(--step-0);
+  font-weight: 900;
+  color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+.container ul.social-icons li:last-child::after {
+  content: unset;
+}
+.container ul.social-icons li:hover {
+  -webkit-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+}
+.container ul.social-icons li a {
+  display: inline-block;
+  width: 110px;
+  height: 110px;
+  color: #EB00C6;
+  background: #f9f9f9;
+  border-radius: 50%;
+  transition: all 0.4s ease;
+}
+.container ul.social-icons li a:hover {
+  color: #f9f9f9;
+  background: #F22187;
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+.container ul.social-icons li a i {
+  display: block;
+  font-size: var(--step-2);
+  text-align: center;
+  line-height: 110px;
+}
+
+.copy {
+  position: relative;
+}
+.copy p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-70%, -50%);
+  color: #f9f9f9;
+  font-size: var(--step-0);
+}
+.copy p a {
+  color: rgb(165, 165, 165);
+  font-size: var(--step--1);
+}/*# sourceMappingURL=style.css.map */
